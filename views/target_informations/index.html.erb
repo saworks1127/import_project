@@ -1,0 +1,65 @@
+<!-- page content -->
+<div class="right_col" role="main">
+  <div class="">
+    <div class="page-title">
+      <div class="title_left">
+        <h3>TargetInformation</h3>
+      </div>
+
+      <div class="title_right">
+        <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for...">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+              </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+
+    <div class="row">
+
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel" style="height:600px;">
+          <div class="x_title">
+            <h2>Plain Page</h2>
+            <div class="clearfix"></div>
+          </div>
+          <table>
+          <tr>
+            <td>id</td>
+            <td>name</td>
+            <td>domain</td>
+            <td>favicon_url</td>
+          </tr>
+
+          <%= form_for @target_information, url:'target_informations', :method => 'get' do |t| %>
+          <tr>
+            <td><%= t.text_field :id %></td>
+            <td><%= t.text_field :name %></td>
+            <td><%= t.text_field :domain %></td>
+            <td><%= t.text_field :favicon_url %></td>
+            <td><%= submit_tag("search") %></td>
+          </tr>
+          <% end %>
+
+          <% @target_informations.each do |target_information| %>
+          <tr>
+            <td><%= target_information.id %></td>
+            <td><%= target_information.name %></td>
+            <td><%= target_information.domain %></td>
+            <td><%= target_information.favicon_url %></td>
+            <td><%= link_to('編集', edit_target_information_path(target_information), :method => :get) %></td>
+            <td><%= link_to('削除', target_information_path(target_information), :method => :delete, :data => {confirm:'削除しますか？'}) %></td>
+          </tr>
+          <% end %>
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /page content -->

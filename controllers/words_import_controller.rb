@@ -1,0 +1,2 @@
+class WordsImportController < ApplicationController
+end

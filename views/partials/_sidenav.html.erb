@@ -1,0 +1,115 @@
+
+<div class="main_container">
+
+  <div class="col-md-3 left_col">
+    <div class="left_col scroll-view">
+
+      <div class="navbar nav_title" style="border: 0;">
+        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Aldebaran</span></a>
+      </div>
+      <div class="clearfix"></div>
+
+      <!-- menu profile quick info -->
+      <div class="profile">
+        <div class="profile_pic">
+          <%= image_tag "logo/tachikoma.jpg", :class => "img-circle profile_img"  %>
+        </div>
+        <div class="profile_info">
+          <span>バトーさん！</span>
+          <h2><%= @user.short_email %></h2>
+        </div>
+      </div>
+      <!-- /menu profile quick info -->
+      <br />
+
+      <!-- sidebar menu -->
+      <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+        <div class="menu_section">
+          <h3>コンテンツ管理</h3>
+          <ul class="nav side-menu">
+            <li><a href="index.html"><i class="fa fa-home"></i> Dashboard </a></li>
+            <li><a><i class="fa fa-bookmark-o"></i> 取得対象 <span class="fa fa-chevron-down"></span></a>
+              <ul class="nav child_menu" style="display: none">
+                <li><a href="/targets">一覧</a>
+                </li>
+                <li><a href="/targets/new">新規登録</a>
+                </li>
+              </ul>
+            </li>
+            <li><a><i class="fa fa-desktop"></i> 取得対象情報 <span class="fa fa-chevron-down"></span></a>
+              <ul class="nav child_menu" style="display: none">
+                <li><a href="/target_informations">一覧</a>
+                </li>
+                <li><a href="/target_informations/new">新規登録</a>
+                </li>
+              </ul>
+            </li>
+            <li><a><i class="fa fa-sitemap"></i> カテゴリ <span class="fa fa-chevron-down"></span></a>
+              <ul class="nav child_menu" style="display: none">
+                <li><a href="/categories">一覧</a>
+                </li>
+                <li><a href="/categories/new/">新規登録</a>
+                </li>
+              </ul>
+            </li>
+            <li><a><i class="fa fa-file"></i> コンテンツ <span class="fa fa-chevron-down"></span></a>
+              <ul class="nav child_menu" style="display: none">
+                <li><a href="/contents">一覧</a>
+                </li>
+                <li><a href="/contents/new">新規登録</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="menu_section">
+          <h3>管理ツール</h3>
+          <ul class="nav side-menu">
+            <li><a><i class="fa fa-book"></i> ワード <span class="fa fa-chevron-down"></span></a>
+              <ul class="nav child_menu" style="display: none">
+                <li><a href="/words">一覧</a>
+                </li>
+                <li><a href="/words/new">新規登録</a>
+                </li>
+                <li><a href="#">一括登録</a>
+                </li>
+              </ul>
+            </li>
+            <li><a><i class="fa fa-child"></i> ユーザー <span class="fa fa-chevron-down"></span></a>
+              <ul class="nav child_menu" style="display: none">
+                <li><a href="#">一覧</a>
+                </li>
+                <li><a href="#">新規登録</a>
+                </li>
+              </ul>
+            </li>
+            <li><a><i class="fa fa-puzzle-piece"></i> バッチ <span class="fa fa-chevron-down"></span></a>
+              <ul class="nav child_menu" style="display: none">
+                <li><a href="#">一覧</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <!-- /sidebar menu -->
+
+      <!-- /menu footer buttons -->
+      <div class="sidebar-footer hidden-small">
+        <a data-toggle="tooltip" data-placement="top" title="Settings">
+          <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+        </a>
+        <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+          <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+        </a>
+        <a data-toggle="tooltip" data-placement="top" title="Lock">
+          <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+        </a>
+        <a data-toggle="tooltip" data-placement="top" title="Logout">
+          <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+        </a>
+      </div>
+      <!-- /menu footer buttons -->
+    </div>
+  </div>

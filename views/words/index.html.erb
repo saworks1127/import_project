@@ -1,0 +1,87 @@
+<!-- page content -->
+<div class="right_col" role="main">
+  <div class="">
+    <div class="page-title">
+      <div class="title_left">
+        <h3>category</h3>
+      </div>
+
+      <div class="title_right">
+        <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                              <button class="btn btn-default" type="button">Go!</button>
+                          </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+
+    <div class="row">
+
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+          <div class="x_title">
+            <h2>Plain Page</h2>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+            <br />
+            <%= form_for @word, url:'words', :method => 'get', :html => {:class => 'form-horizontal form-label-left'} do |t| %>
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Text
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <%= t.text_field :text, :class => 'form-control col-md-7 col-xs-12' %>
+                </div>
+              </div>
+              <div class="ln_solid"></div>
+              <div class="form-group">
+                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                  <%= submit_tag("search", :class => 'btn btn-success') %>
+                </div>
+              </div>
+            <% end %>
+            <div class="table-responsive">
+              <table class="table table-striped jambo_table bulk_action">
+                <thead>
+                  <tr class="headings">
+                    <th>
+                      <input type="checkbox" id="check-all" class="flat">
+                    </th>
+                    <th class="column-title">ID</th>
+                    <th class="column-title">Text</th>
+                    <th class="column-title">編集</th>
+                    <th class="column-title">削除</th>
+                    </th>
+                    <th class="bulk-actions" colspan="7">
+                      <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+                    </th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                <% @words.each do |word| %>
+                  <tr class="<%= cycle("even", "odd") =%> pointer">
+                    <td class="a-center ">
+                      <input type="checkbox" class="flat" name="table_records">
+                    </td>
+                    <td class=" "><%= word.id %></td>
+                    <td class=" "><%= word.text %></td>
+                    <td><%= link_to('編集', edit_word_path(word), :method => :get) %></td>
+                    <td><%= link_to('削除', word_path(word), :method => :delete, :data => {confirm:'削除しますか？'}) %></td>
+                    </td>
+                  </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /page content -->
